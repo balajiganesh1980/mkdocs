@@ -17,7 +17,7 @@ RUN apk add --update python3 libcap  && \
     /usr/bin/python3 -m ensurepip && \
     pip3 install --no-cache --upgrade pip setuptools wheel && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    pip install  mkdocs click-man && \
+    pip3 install  mkdocs click-man && \
     mkdir /opt/www && \
     addgroup -g 101 -S mkdocs  && \
     adduser -S -D -H -u 101 -h /opt/www -s /sbin/nologin -G mkdocs -g mkdocs mkdocs && \
