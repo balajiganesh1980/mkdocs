@@ -1,7 +1,7 @@
 pipeline {
   environment {
-    registry = "anishnath/mkdocs"
-    registryCredential = 'docker-creds'
+    registry = "balajiganesh1980/mkdocs"
+    registryCredential = 'dockerhub'
     dockerImage = ''
   }
   agent any
@@ -21,7 +21,7 @@ pipeline {
 
     stage('Test Mkdocs' ) {
                 agent {
-                docker { image 'anishnath/mkdocs:$BUILD_NUMBER' }
+                docker { image 'balajiganesh1980/mkdocs:$BUILD_NUMBER' }
             }
             steps {
                 sh 'mkdocs --version'
